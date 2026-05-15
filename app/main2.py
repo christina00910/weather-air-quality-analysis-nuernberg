@@ -2,7 +2,7 @@
 # @Author: Frank Hasdorf
 # @Date:   12-05-2026 16:38:09
 # @Last Modified by:   Frank Hasdorf
-# @Last Modified time: 15-05-2026 07:56:46
+# @Last Modified time: 15-05-2026 11:04:44
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -14,16 +14,30 @@ st.set_page_config(page_title="Luft & Wetter Bayern", page_icon="🌬️", layou
 # --- 1. DATEN LADEN & MERGEN ---
 @st.cache_data
 def load_and_merge_data():
-    # 1. Wetter laden
-    df_wetter = pd.read_csv("data/wetter_hourly_nurnberg_1980_2023.csv")
-    df_wetter['Datum_Uhrzeit'] = pd.to_datetime(df_wetter['Datum_Uhrzeit'])
+    # 1. Wetter laden (mit pd.read_csv!)
+    df_wetter = pd.read_csv("data/wetterdaten_analyse.csv")
     
-    # 2. Luftdaten laden (Hier setzen wir einen Try-Except-Block ein)
+    # 2. Spaltennamen an das Dashboard anpassen (Mapping)
+    rename_logic = {
+        'Datum': 'Datum_Uhrzeit',
+        'Temperatur': 'Temperatur_C',
+        'Windgeschwindigkeit': 'Wind_kmh',
+        'Sonnenscheindauer_Minuten': 'Sonnenschein_min',
+        'Relative_Luftfeuchtigkeit': 'rhum'
+    }
+    df_wetter = df_wetter.rename(columns=rename_logic)
+    
+    # 3. Das spezielle Datumsformat (YYYYMMDDHH) konvertieren
+    # Da deine neuen Daten das Format "1955040700" (JahrMonatTagStunde) haben,
+    # sagen wir Pandas hier exakt, wie es gelesen werden muss:
+    df_wetter['Datum_Uhrzeit'] = pd.to_datetime(df_wetter['Datum_Uhrzeit'], format='%Y%m%d%H')
+    
+    # 4. Luftdaten laden & Mergen (Dein bisheriger Code)
     try:
         df_luft = pd.read_csv("data/luftdaten_nurnberg.csv")
         df_luft['Datum_Uhrzeit'] = pd.to_datetime(df_luft['Datum_Uhrzeit'])
         
-        # Inner Join: Wir behalten nur die Stunden, für die wir Wetter & Luftdaten haben.
+        # Inner Join: Verknüpft Wetter & Luftdaten exakt nach Stunde
         df_merged = pd.merge(df_wetter, df_luft, on='Datum_Uhrzeit', how='inner')
         st.sidebar.success("✅ Wetter & echte Luftdaten erfolgreich verknüpft!")
         
@@ -31,7 +45,7 @@ def load_and_merge_data():
         st.sidebar.warning("⚠️ Echte UBA-Daten nicht gefunden. Nutze simulierte Daten für das Layout.")
         df_merged = df_wetter.copy()
         
-        # Wir simulieren realistische Zusammenhänge für den Test:
+        # Fallback-Simulation
         df_merged['Ozon'] = np.maximum(0, df_merged['Temperatur_C'] * 2.5 + (df_merged['Sonnenschein_min'].fillna(0) / 10) + np.random.normal(0, 10, len(df_merged)))
         df_merged['NO2'] = np.maximum(0, 60 - df_merged['Temperatur_C'] - (df_merged['Wind_kmh'] * 0.5) + np.random.normal(0, 5, len(df_merged)))
 
