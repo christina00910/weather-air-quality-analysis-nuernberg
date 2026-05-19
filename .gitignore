@@ -4,4 +4,6 @@ docs/
 .ipynb_checkpoints/
 dsi_env/
 nogithub/
-
+.tmp.driveupload/
+.virtual_documents/
+.devcontainer/
