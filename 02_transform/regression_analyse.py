@@ -100,6 +100,11 @@ plt.show()
 # Korrelation zeigt nur Zusammenhänge, aber keine eindeutige Ursache-Wirkung.
 
 # Multiple Lineare Regression
+# Die Regression zeigt, wie einzelne Wettervariablen die Luftschadstoffe beeinflussen 
+# und ob ein signifikanter positiver oder negativer Zusammenhang besteht. 
+# Aufgrund unterschiedlicher Einheiten der Wettervariablen können die Einflussstärken der Koeffizienten 
+# jedoch nicht direkt miteinander verglichen werden (z.B. Temperatur mit Niederschlag)
+
 # Zielvariable festlegen
 schadstoff = "o3"
 
