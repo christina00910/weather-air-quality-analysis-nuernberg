@@ -1,3 +1,6 @@
+# Fragestellung:
+# Gibt es einen statistisch signifikanten Zusammenhang zwischen Wetter und Luftschadstoffen?
+
 # Bibliotheken Laden
 import pandas as pd
 import statsmodels.api as sm
