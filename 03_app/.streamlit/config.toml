@@ -1,0 +1,18 @@
+[theme]
+# Aktiviert den globalen Dark-Mode für alle Standard-Elemente
+base="dark"
+
+# Die Akzentfarbe (z.B. für Buttons, aktive Tabs, Slider)
+primaryColor="#00CC96" 
+
+# Hintergrundfarbe der Hauptseite (ein tiefes, augenschonendes Dunkelblau/Grau)
+backgroundColor="#0E1117"
+
+# Hintergrundfarbe für abgesetzte Bereiche (wie die Seitenleiste)
+secondaryBackgroundColor="#262730"
+
+# Standard-Textfarbe
+textColor="#FAFAFA"
+
+# Schriftart (sans serif wirkt am modernsten für Dashboards)
+font="sans serif"

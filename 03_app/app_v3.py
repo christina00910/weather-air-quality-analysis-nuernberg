@@ -13,6 +13,7 @@ import pandas as pd
 import os
 from pathlib import Path # für sichere Datenpfade auf jedem Rechner
 import plotly.express as px # Neu. Für die interaktiven Charts nutzen wir die Plotly-Bibliothek, die sich nahtlos in Streamlit integrieren lässt.
+import time
 
 # Die Besonderheit bei Streamlit ist: st.set_page_config muss zwingend der 
 # allererste Streamlit-Befehl im Skript sein, noch bevor irgendwelche anderen 
@@ -28,9 +29,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# 2. erster visueller Test
-st.title("Luftqualität & Wetter Dashboard")
-st.markdown("*Dürrbeck, Edelhoff, Hasdorf - Abschlussprojekt Dezember 2025*")
 
 # Neu: Daten laden mit @st.cache. Das sorgt dafür, dass die Daten nur einmal geladen werden und nicht bei jedem Skriptlauf erneut eingelesen werden müssen.
 @st.cache_data
@@ -76,29 +74,89 @@ def load_data():
 
     return df  
 
+# Daten importieren
 df = load_data()
 
-# Kurzer Test-Output im Browser
-# st.success zeigt eine grüne Erfolgsmeldung an, ist wie st.write, nur eben grün hinterlegt
-st.success(f"Daten erfolgreich geladen: {len(df)} Zeilen!") 
+# Seitenleiste definieren
+with st.sidebar:
+    
+    st.title("🌦️ Projekt-Menü")
+    st.markdown("---")
+
+    with st.spinner("Loading..."):
+        time.sleep(2)
+        
+    # --- Custom Success Message mit Courier und 11px ---
+    st.markdown(
+        f"""
+        <div style="background-color: rgba(46, 134, 43, 0.2); padding: 12px; border-radius: 0.5rem; border: 1px solid rgba(46, 134, 43, 0.4);">
+            <span style="font-family: 'Courier New', Courier, monospace; font-size: 11px; color: #FAFAFA;">
+                ✅ Daten erfolgreich geladen: {len(df)} Zeilen!
+            </span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Der unsichtbare Platzhalter ---
+    # Sorgt dafür, dass der letzte Inhalt nicht dauerhaft hinter dem Footer verschwindet.
+    st.markdown("<div style='height: 120px;'></div>", unsafe_allow_html=True)
+
+    # Der "Sticky" Footer mit Hintergrund ---
+    st.markdown(
+        """
+        <style>
+            .sidebar-footer {
+                position: absolute; /* Bindet ihn an die Seitenleiste */
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #262730; /* Standard Streamlit Dark-Mode Seitenleisten-Farbe */
+                padding: 15px 0 20px 0; /* Abstand oben und unten */
+                text-align: center;
+                font-size: 12px;
+                color: #888888;
+                z-index: 999; /* Zwingt den Footer in den absoluten Vordergrund */
+            }
+        </style>
+        
+        <div class="sidebar-footer">
+            <hr style="margin-top: 0; margin-bottom: 10px; border-color: #444444;">
+            <b>Projekt:</b> Modulare Analyse von Wetter- und Luftqualitätsdaten<br>
+            <b>Milestone 1:</b> Nürnberg<br>
+            <b>Team:</b> Christina, Markus, Frank<br>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # Tabs definieren
-tab1, tab2, tab3 = st.tabs(["Datenüberblick", "Zeitreihenanalyse", "Korrelationen"])    
+tab1, tab2, tab3 = st.tabs(["Wetterdaten", "Luftqualität", "Klimatrends"])    
 
 # Tab 1: Datenüberblick
 with tab1:
-    st.header("Datenüberblick")
-    st.write("hier kommen Daten rein")
+    st.header("Wetterdaten")
     st.dataframe(df.head()) # Zeigt die ersten 5 Zeilen interaktiv an
+    st.echo()
+    # Infobox unter Grafiken
+    st.markdown    
+    <div style="background-color: rgba(0, 104, 249, 0.1); padding: 10px; border-radius: 0.3rem; border: 1px solid rgba(0, 104, 249, 0.2);">
+        <span style="font-family: 'Courier New', Courier, monospace; font-size: 11px; color: #FAFAFA;">
+            📄 Dateipfad: "data" / "Schadstoff_Wetter.csv"
+        </span>
+    </div>
+    ,
+    unsafe_allow_html=True
+)
 
 # Tab 2: Zeitreihenanalyse
 with tab2:
-    st.header("Zeitreihenanalyse")
+    st.header("Luftqualität über die Zeit")
 
 # Tab 3: Korrelationen
 with tab3:
-    st.header("Korrelationen")  
+    st.header("Klimatrends")  
     st.write("hier kommen Korrelationen rein")
     
 
