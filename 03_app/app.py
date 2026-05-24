@@ -27,22 +27,23 @@ st.set_page_config(
 
 def showEDAPlots (dfOrginal, stoff)  :        
     fig = a.calcMeanYear (dfOrginal, stoff)
-    st.plotly_chart(fig, use_container_width=True)
+    st.pyplot(fig, use_container_width=True)
 
     fig = a.calcMeanSaisonYear (dfOrginal, stoff)
-    st.plotly_chart(fig, use_container_width=True)
+    st.pyplot(fig, use_container_width=True)
 
     fig = a.rushHourEffekt (dfOrginal, stoff) 
     st.pyplot(fig)
         
-#    fig = a.inversionswetter (dfOrginal, stoff)
-#    st.pyplot(fig)
+    fig = a.inversionswetter (dfOrginal, stoff)
+    st.pyplot(fig)
 
-#    fig = a.seasonalInfluence (dfOrginal, stoff)
-#    st.pyplot(fig)
+    fig = a.getExceedancesPerYear (dfOrginal, stoff)
+    st.pyplot(fig)
 
-#    fig = a.smogVSNormal (dfOrginal, stoff)
-#    st.pyplot(fig)
+    fig_season, fig_weekend = a.analyzeSeasonAndWeekend (dfOrginal, stoff)
+    st.pyplot(fig_season)
+    st.pyplot(fig_weekend)
     
     return
 
