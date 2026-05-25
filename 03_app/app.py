@@ -238,7 +238,7 @@ with tab2:
         
         st.markdown("---")
         # KORREKTUR: Doppelten if-Zweig zusammengeführt
-        st.info("Hier kommt später irgendein kombinierter Plotly-Linienchart für alle Schadstoffe hin.")
+        st.info("Hier kommt später irgendein kombinierter Chart für alle Schadstoffe hin.")
 
     elif schadstoff_auswahl == "Ozon (O₃)":
 
@@ -298,18 +298,42 @@ with tab2:
         showEDAPlots (dfOrginal, stoff)
 
 # ============================================================
-# TAB 3: KLIMATRENDS
+# TAB 3: KORRELATIONSANALYSE
 # ============================================================
 with tab3:
-    st.header("📈 Langzeit-Klimatrends (1980–2024)")
-    st.write("Dieser Bereich analysiert die klimatischen Veränderungen über die letzten Jahrzehnte hinweg.")
-    st.info("Hier visualisieren wir später die langfristige Erwärmung und Schadstoffreduktion.")
+    st.header("Korrelationen zwischen Wetter und Schadstoffen über die Jahre")
+    st.write("Lorem Ipsum")
+    st.info("Lorem Ipsum")
+
+# ============================================================
+# TAB 4: MULTIPLE REGRESSION
+# ============================================================
+with tab4:
+    st.header("Multiple Regression: Wetter als Prädiktor für Schadstoffbelastung")
+    st.write("Lorem Ipsum")
+    st.info("Lorem Ipsum")
+
+# ============================================================
+# TAB 5: RANDOM FOREST
+# ============================================================
+with tab5:
+    st.header("Random Forest: Wetter als Prädiktor für Schadstoffbelastung")
+    st.write("Lorem Ipsum")
+    st.info("Lorem Ipsum")
+
+# ============================================================
+# TAB 4: VORHERSAGE
+# ============================================================
+with tab6:
+    st.header("Vorhersage")
+    st.write("Lorem Ipsum")
+    st.info("Lorem Ipsum")
 
 # ============================================================
 # TAB 4: TECHNISCHE INSIGHTS
 # ============================================================
-with tab4:
-    st.header("📝 Technische Insights")
+with tab7:
+    st.header("Technische Insights")
     
     st.info("Dieses Dokument beschreibt die architektonischen Kniffe und gelösten Fallstricke bei der Entwicklung des Umwelt-Dashboards (*Milestone 1: Nürnberg*). Die Punkte dienen als Kernkompetenz-Nachweis für die Abschlusspräsentation im Dezember 2025.")
 
