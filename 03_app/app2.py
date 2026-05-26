@@ -715,5 +715,5 @@ elif seite == "Random Forest":
     seite_random_forest()
 elif seite == "Vorhersage":
     seite_vorhersage()
-elif seite == "📝 Technische Insights":
+elif seite == "Technische Insights":
     seite_tech_insights()
