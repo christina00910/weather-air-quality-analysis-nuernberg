@@ -32,7 +32,14 @@ st.image(
     "Bilder/gesundheit.png",
     caption="Quelle: Umweltbundesamt (2023)",
     use_container_width=True)
+st.markdown("""
+Die dargestellte Übersicht verdeutlicht, dass Luftschadstoffe zahlreiche Bereiche des menschlichen Körpers beeinflussen können. 
+Besonders betroffen sind die Atemwege sowie das Herz-Kreislauf-System, 
+jedoch stehen Luftschadstoffe auch im Zusammenhang mit neurologischen Erkrankungen, Stoffwechselerkrankungen 
+sowie gesundheitlichen Risiken während der Schwangerschaft.
 
+Die Analyse der Luftqualität besitzt daher nicht nur eine ökologische, sondern insbesondere auch eine hohe gesundheitliche Relevanz.
+""")
 # 3 Spalten mit Luftschadstoffen
 col1, col2, col3 = st.columns(3)
 
@@ -95,7 +102,7 @@ st.markdown("""
 st.header("⚙️ Datenaufbereitung")
 
 st.markdown("""
-Im Rahmen der Datenaufbereitung wurden die Wetter- und Luftschadstoffdaten:
+Im Rahmen der Datenaufbereitung wurden die Wetter- und Luftschadstoffdaten über Python:
 
 - zeitlich aufeinander abgestimmt
 - bereinigt und zusammengeführt
