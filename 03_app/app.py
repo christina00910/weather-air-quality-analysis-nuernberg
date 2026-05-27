@@ -59,31 +59,47 @@ def showEDAPlots (df_prepared, stoff):
     if fig_year: 
         st.pyplot(fig_year, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Grafik zeigt einen langfristigen Anstieg der durchschnittlichen Ozonkonzentration seit den 1980er-Jahren. Besonders in den letzten Jahren sind erhöhte Ozonwerte erkennbar, was auf den Einfluss steigender Temperaturen und intensiver Sonneneinstrahlung hinweisen kann.
+            """)
         elif (stoff == "no2") :
-            st.info ("CHRISTINA2")
+            st.caption("""
+        Die Grafik zeigt einen langfristigen Rückgang der durchschnittlichen NO₂-Konzentrationen seit den 1990er-Jahren. Besonders in den letzten Jahren sind deutlich sinkende Werte erkennbar, was unter anderem auf strengere Emissionsgrenzwerte und technologische Entwicklungen im Verkehrssektor hinweisen könnte. Der starke Rückgang im Jahr 1993 stellt hingegen einen auffälligen Ausreißer innerhalb der Zeitreihe dar und könnte auf eine daten- oder messtechnische Besonderheit hinweisen.
+        """)   
         elif (stoff == "pm10") :
-            st.info ("CHRISTINA3")
+            st.caption("""
+            Die Grafik zeigt einen langfristigen Rückgang der PM10-Konzentrationen seit den 1980er-Jahren. Besonders ab den 2000er-Jahren sind deutlich sinkende Werte erkennbar, was auf strengere Umweltauflagen, technische Entwicklungen im Verkehrs- und Industriesektor sowie verbesserte Luftreinhaltemaßnahmen hinweisen könnte. Auch die PM2.5-Werte zeigen seit Beginn der verfügbaren Messreihe ab 2008 eine insgesamt rückläufige Entwicklung.
+            """)
 
     # 2. Saisonales Muster (Jahrzehntvergleich)
     fig_saison = an.calcMeanSaisonYear(df_prepared, stoff)
     if fig_saison: 
         st.pyplot(fig_saison, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Grafik zeigt ein deutlich saisonales Ozonmuster mit erhöhten Konzentrationen in den Frühjahrs- und Sommermonaten. Besonders in den neueren Jahrzehnten treten höhere Ozonwerte auf, was auf den Einfluss steigender Temperaturen und intensiver Sonneneinstrahlung hinweisen kann.
+            """)
         elif (stoff == "no2") :
-            st.info ("CHRISTINA2")
+            st.caption("""
+            Die Grafik zeigt insgesamt sinkende NO₂-Konzentrationen über die Jahrzehnte hinweg. Gleichzeitig sind besonders in den Wintermonaten höhere Werte erkennbar, was auf verstärkte Emissionen durch Verkehr und Heizungen sowie ungünstigere meteorologische Bedingungen für den Schadstoffabbau hinweisen kann.
+            """)
         elif (stoff == "pm10") :
-            st.info ("CHRISTINA3")
+            st.caption("""
+            Die Grafik zeigt deutliche saisonale Unterschiede der PM10-Konzentrationen im Jahrzehntvergleich. Während in den 1980er- und 2000er-Jahren teilweise höhere Belastungen in einzelnen Herbst- und Wintermonaten auftreten, liegen die Werte im Jahr 2020 insgesamt deutlich niedriger. Dies deutet langfristig auf eine Verbesserung der Luftqualität sowie auf den Einfluss verschärfter Umwelt- und Emissionsmaßnahmen hin.
+            """)
             
     # 3. Rush-Hour-Effekt (Tagesverlauf)
     fig_rush = an.rushHourEffekt(df_prepared, stoff) 
     if fig_rush: 
         st.pyplot(fig_rush, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Grafik zeigt einen deutlichen Tagesverlauf der Ozonkonzentration mit niedrigen Werten in den frühen Morgenstunden und einem Maximum am Nachmittag. Dies deutet auf den Einfluss photochemischer Prozesse sowie die Wechselwirkung zwischen Sonneneinstrahlung und Stickoxiden bei der Ozonbildung hin.
+            """)
         elif (stoff == "no2") :
-            st.info ("CHRISTINA2")
+            st.caption("""
+            Die Grafik zeigt deutliche NO₂-Spitzen während der morgendlichen und abendlichen Hauptverkehrszeiten. Besonders in den Abendstunden steigen die Konzentrationen stark an, was auf erhöhte Verkehrsemissionen sowie eine geringere Verdünnung und Durchmischung der Schadstoffe in der Luft hinweist.
+            """)
         elif (stoff == "pm10") :
             st.info ("CHRISTINA3")
             
@@ -92,7 +108,9 @@ def showEDAPlots (df_prepared, stoff):
     if fig_inversion: 
         st.pyplot(fig_inversion, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Grafik zeigt deutlich niedrigere Ozonkonzentrationen während Inversionslagen mit windstillen und wolkenlosen Wetterbedingungen. Dies weist darauf hin, dass Ozon in bodennahen Smogsituationen durch Stickoxide verstärkt abgebaut wird.
+            """)
         elif (stoff == "no2") :
             st.info ("CHRISTINA2")
         elif (stoff == "pm10") :
@@ -103,7 +121,9 @@ def showEDAPlots (df_prepared, stoff):
     if fig_exceed: 
         st.pyplot(fig_exceed, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Anzahl der Stunden mit mindestens mäßiger Ozonbelastung ist seit den 1980er-Jahren deutlich angestiegen. Besonders in den letzten Jahren treten erhöhte Ozonkonzentrationen häufiger auf, was auf veränderte klimatische und meteorologische Bedingungen hinweist.
+            """)
         elif (stoff == "no2") :
             st.info ("CHRISTINA2")
         elif (stoff == "pm10") :
@@ -114,7 +134,9 @@ def showEDAPlots (df_prepared, stoff):
     if fig_season: 
         st.pyplot(fig_season, use_container_width=False)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die höchsten Ozonkonzentrationen treten im Sommer und Frühjahr auf, während im Herbst und Winter deutlich niedrigere Werte gemessen werden. Dies verdeutlicht den starken Einfluss von Sonneneinstrahlung und höheren Temperaturen auf die Ozonbildung.
+            """)
         elif (stoff == "no2") :
             st.info ("CHRISTINA2")
         elif (stoff == "pm10") :
@@ -122,7 +144,9 @@ def showEDAPlots (df_prepared, stoff):
     if fig_weekend: 
         st.pyplot(fig_weekend)
         if (stoff == "o3") :
-            st.info ("CHRISTINA1")
+            st.caption("""
+            Die Grafik zeigt höhere durchschnittliche Ozonkonzentrationen an Wochenenden im Vergleich zu Werktagen. Dies könnte auf geringere Stickoxid-Emissionen durch den Straßenverkehr und damit einen verminderten Ozonabbau zurückzuführen sein.
+            """)
         elif (stoff == "no2") :
             st.info ("CHRISTINA2")
         elif (stoff == "pm10") :
@@ -152,7 +176,6 @@ def load ():
 
     
 #######################################################
-
 @st.fragment
 def showTab2():
     st.header("Wetterdaten")
@@ -411,16 +434,6 @@ def showTab2():
             hide_index=True
         )
 
-    st.markdown(
-        f"""
-        <div style="background-color: rgba(0, 104, 249, 0.1); padding: 10px; border-radius: 0.3rem; border: 1px solid rgba(0, 104, 249, 0.2);">
-            <b>Hinweis zur Datenbasis:</b> Die Kennzahlen beziehen sich auf das ausgewählte Jahr <code>{selected_year}</code>. 
-            Die langfristige Grafik zeigt die Entwicklung der ausgewählten Wettervariable über den gesamten verfügbaren Zeitraum.
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
 #######################################################
 @st.fragment
 def showTab3 ():
@@ -648,7 +661,12 @@ von der explorativen Datenanalyse über Korrelations- und Regressionsverfahren
 bis hin zu Vorhersagemodellen für Luftschadstoffkonzentrationen.
 """)
 
-    st.markdown("### 🔎 Analysebereiche")
+    st.markdown(
+        "<div style='margin-top: 50px;'></div>",
+        unsafe_allow_html=True
+    )
+
+    st.header("🔎 Analysebereiche")
 
     col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -671,11 +689,18 @@ bis hin zu Vorhersagemodellen für Luftschadstoffkonzentrationen.
     # PROJEKT-INFOS
     # =========================
 
+    st.markdown(
+        "<div style='margin-top: 50px;'></div>",
+        unsafe_allow_html=True
+    )
+
+    st.header("📋 Projektinfos")
+
     st.markdown("""
 <div style="
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start;
+    gap: 80px;
     margin-top: 25px;
     margin-bottom: 10px;
     padding: 20px 10px 10px 10px;
@@ -713,6 +738,11 @@ bis hin zu Vorhersagemodellen für Luftschadstoffkonzentrationen.
 </div>
 """, unsafe_allow_html=True)
 
+    st.markdown(
+        "<div style='margin-top: 30px;'></div>",
+        unsafe_allow_html=True
+    )
+
     st.header("📌 Projektüberblick")
 
     st.write("""
@@ -727,6 +757,11 @@ Korrelationsverfahren, multiple lineare Regressionen sowie Random-Forest-Modelle
 Zusätzlich werden verschiedene Vorhersageansätze entwickelt, um Luftschadstoffkonzentrationen 
 auf Basis meteorologischer, zeitlicher und historischer Einflussgrößen prognostizieren zu können.
 """)
+
+    st.markdown(
+        "<div style='margin-top: 30px;'></div>",
+        unsafe_allow_html=True
+    )
 
     st.header("🫁 Gesundheitliche Auswirkungen von Luftschadstoffen")
 
@@ -744,9 +779,14 @@ und stehen mit verschiedenen gesundheitlichen Erkrankungen in Zusammenhang.
         width=900
     )
 
-    st.info("""
-Die Grafik zeigt, dass Luftschadstoffe mit verschiedenen gesundheitlichen Belastungen verbunden sein können.
-""")
+    st.caption("""
+    Die Grafik zeigt, dass Luftschadstoffe mit verschiedenen gesundheitlichen Belastungen verbunden sein können.
+    """)
+
+    st.markdown(
+        "<div style='margin-top: 30px;'></div>",
+        unsafe_allow_html=True
+    )
 
     st.header("📊 Verwendete Datenquellen")
 
@@ -760,6 +800,11 @@ Die Grafik zeigt, dass Luftschadstoffe mit verschiedenen gesundheitlichen Belast
 - **Open-Meteo API**  
   Aktuelle Wetterdaten für die Live-Vorhersage der Luftschadstoffwerte.
 """)
+
+    st.markdown(
+        "<div style='margin-top: 30px;'></div>",
+        unsafe_allow_html=True
+    )
 
     st.header("⚙️ Datenaufbereitung")
 
@@ -845,6 +890,11 @@ Dabei wurden die Daten:
             hide_index=True
         )
 
+    st.markdown(
+        "<div style='margin-top: 30px;'></div>",
+        unsafe_allow_html=True
+    )
+
     st.header("📊 Datensatzübersicht")
 
     col1, col2, col3 = st.columns(3)
@@ -870,10 +920,13 @@ Dabei wurden die Daten:
         st.metric("Untersuchungsregion", "Nürnberg")
 
     st.info("""
-Da PM2.5-Daten erst ab 2008 vollständig verfügbar sind, wurden alle vergleichenden Analysen 
-zwischen den Luftschadstoffen (z. B. Korrelationsanalyse, Multiple Regression, 
-Random Forest sowie Vorhersagemodelle) einheitlich ab dem Jahr 2008 durchgeführt.
-""")
+    Da PM2.5-Daten erst ab 2008 vollständig verfügbar sind, wurden alle vergleichenden Analysen 
+    zwischen den Luftschadstoffen (z. B. Korrelationsanalyse, Multiple Regression, 
+    Random Forest sowie Vorhersagemodelle) einheitlich ab dem Jahr 2008 durchgeführt.
+    
+    Niederschlagsdaten stehen erst ab dem Jahr 1995 vollständig zur Verfügung. 
+    Zeitliche Visualisierungen zur Niederschlagsentwicklung werden daher ab 1995 dargestellt.
+    """)
 
 # ------------------------------------------------------------
 # TAB 2: WETTERDATEN
