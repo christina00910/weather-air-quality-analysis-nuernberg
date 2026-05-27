@@ -35,7 +35,7 @@ def calcMeanYear(df, stoff):
         st.warning(f"Keine ausreichenden Daten für {stoff} vorhanden (min. 70% Abdeckung benötigt).")
         return None
 
-    fig, ax = plt.subplots(figsize=(7, 4), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
     
     # 1. Haupt-Schadstoff plotten (z.B. pm10, O3, NO2)
@@ -46,7 +46,7 @@ def calcMeanYear(df, stoff):
         marker='o',                   
         markerfacecolor='white',      
         markeredgecolor='#4A90E2',
-        linewidth=2,
+        linewidth=1,
         label=stoff.upper()
     )
     
@@ -116,7 +116,7 @@ def calcMeanSaisonYear(df, stoff):
     # ========================================================
     # MATPLOTLIB-DARSTELLUNG (Kompakt, Dark Mode, Ohne Legende)
     # ========================================================
-    fig, ax = plt.subplots(figsize=(6, 4), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
 
     # Ziel-Jahre und Kontrastfarben für den Dark Mode
@@ -217,7 +217,7 @@ def rushHourEffekt(df, stoff):
 
     # Standard-Stile zurücksetzen & Black Mode initialisieren
     plt.rcParams.update(plt.rcParamsDefault)
-    fig, ax = plt.subplots(figsize=(10, 4), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
     
     # 1. Haupt-Schadstoff plotten
@@ -296,7 +296,7 @@ def getKorrelation(df, stoff):
         st.warning(f"Schadstoff '{stoff}' wurde in der Korrelationsmatrix nicht gefunden.")
 
     # 3. Visuelle Heatmap
-    fig, ax = plt.subplots(figsize=(10, 8))
+    fig, ax = plt.subplots(figsize=(5, 3))
     sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f", ax=ax)
     ax.set_title("Korrelationsmatrix der Messreihe")
     plt.tight_layout()
@@ -320,7 +320,7 @@ def getEinfluss(df, stoff):
         return None
 
     # Figure mit zwei Diagrammen nebeneinander erstellen
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(5, 3))
 
     # --- DIAGRAMM 1: Windgeschwindigkeit ---
     # Suchen der Wind-Spalte (unabhängig von Groß-/Kleinschreibung)
@@ -433,7 +433,7 @@ def inversionswetter(df, stoff):
     # Standard-Stile zurücksetzen
     plt.rcParams.update(plt.rcParamsDefault)
     
-    fig, ax = plt.subplots(figsize=(7, 6), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
     
     farben = {
@@ -560,7 +560,7 @@ def smogVSNormal(df, stoff):
     # GRAFISCHE DARSTELLUNG (Kompakt & Dark Mode)
     # ========================================================
     plt.rcParams.update(plt.rcParamsDefault)
-    fig, ax = plt.subplots(figsize=(6, 4), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
 
     # Schneller nativer Matplotlib-Bar-Plot über Pivot-Tabelle statt Seaborn-Rohdaten-Loop
@@ -663,7 +663,7 @@ def analyzeSeasonAndWeekend(df, stoff):
     # ========================================================
     # --- DIAGRAMM 1: JAHRESZEIT ---
     # ========================================================
-    fig_season, ax_season = plt.subplots(figsize=(5, 4), facecolor='black')
+    fig_season, ax_season = plt.subplots(figsize=(5, 3), facecolor='black')
     ax_season.set_facecolor('black')
     
     x_season = np.arange(len(schadstoff_jahreszeit.index))
@@ -767,7 +767,7 @@ def getExceedancesPerYear(df, stoff):
     st.write(f"### 📈 Stunden mit mindestens mäßiger Luftqualität ({stoff.upper()})")
 
     plt.rcParams.update(plt.rcParamsDefault)
-    fig, ax = plt.subplots(figsize=(7, 4), facecolor='black')
+    fig, ax = plt.subplots(figsize=(5, 3), facecolor='black')
     ax.set_facecolor('black')
 
     jahre_int = ueberschreitungen_jahr.index

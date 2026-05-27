@@ -57,7 +57,7 @@ def showEDAPlots (df_prepared, stoff):
     # 1. Jahrestrend (Läuft in Millisekunden aus dem Cache)
     fig_year = an.calcMeanYear(df_prepared, stoff)
     if fig_year: 
-        st.pyplot(fig_year)
+        st.pyplot(fig_year, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
@@ -68,7 +68,7 @@ def showEDAPlots (df_prepared, stoff):
     # 2. Saisonales Muster (Jahrzehntvergleich)
     fig_saison = an.calcMeanSaisonYear(df_prepared, stoff)
     if fig_saison: 
-        st.pyplot(fig_saison)
+        st.pyplot(fig_saison, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
@@ -79,7 +79,7 @@ def showEDAPlots (df_prepared, stoff):
     # 3. Rush-Hour-Effekt (Tagesverlauf)
     fig_rush = an.rushHourEffekt(df_prepared, stoff) 
     if fig_rush: 
-        st.pyplot(fig_rush)
+        st.pyplot(fig_rush, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
@@ -90,7 +90,7 @@ def showEDAPlots (df_prepared, stoff):
     # 4. Inversionswetterlage
     fig_inversion = an.inversionswetter(df_prepared, stoff)
     if fig_inversion: 
-        st.pyplot(fig_inversion)
+        st.pyplot(fig_inversion, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
@@ -101,7 +101,7 @@ def showEDAPlots (df_prepared, stoff):
     # 5. Jährliche LQI-Überschreitungen
     fig_exceed = an.getExceedancesPerYear(df_prepared, stoff)
     if fig_exceed: 
-        st.pyplot(fig_exceed)
+        st.pyplot(fig_exceed, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
@@ -112,7 +112,7 @@ def showEDAPlots (df_prepared, stoff):
     # 6. Jahreszeit & Werktag/Wochenende (Nimmt die zwei Grafiken sauber entgegen)
     fig_season, fig_weekend = an.analyzeSeasonAndWeekend(df_prepared, stoff)
     if fig_season: 
-        st.pyplot(fig_season)
+        st.pyplot(fig_season, use_container_width=False)
         if (stoff == "o3") :
             st.info ("CHRISTINA1")
         elif (stoff == "no2") :
