@@ -157,7 +157,7 @@ def korrelation(dfO, stoff):
     
     korrelation_matrix, fig = berechne_und_plotte_korrelation(dfO, analyse_variablen)
     
-    st.subheader("Korrelationsmatrix")
+    #st.subheader("Korrelationsmatrix")
     st.pyplot(fig, use_container_width=True)
 
 
