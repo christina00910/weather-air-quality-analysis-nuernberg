@@ -1245,7 +1245,7 @@ with tab9:
     Steigt vor allem bei hohen Temperaturen und intensiver Sonneneinstrahlung an.  
     Die Analyse zeigt, dass Ozon stark durch meteorologische Bedingungen beeinflusst wird. Aufgrund steigender Temperaturen und zunehmender Hitzeperioden könnten Ozonbelastungen künftig weiter an Bedeutung gewinnen. 
     
-    Zusätzlich kann der Rückgang von Stickstoffdioxid dazu beitragen, dass Ozon in Bodennähe weniger abgebaut wird, da Stickstoffoxide Ozon teilweise wieder aus der Atmosphäre entfernen – ein Zusammenhang, der teilweise auch als sogenanntes „Ozonparadoxon“ beschrieben wird.
+    Zusätzlich kann der Rückgang von Stickstoffdioxid dazu beitragen, dass Ozon in Bodennähe langsamer abgebaut wird, da Stickstoffoxide unter bestimmten Bedingungen am Abbau von Ozon beteiligt sind. Dieser Zusammenhang wird teilweise auch als „Ozonparadoxon“ beschrieben.
 
     ### 🚗 Stickstoffdioxid (NO₂)
     Zeigt langfristig eher sinkende Werte.  
