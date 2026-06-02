@@ -63,7 +63,7 @@ def calcWithOpenMeteo (dfO, stoff) :
         random_state=42)
     
     modell = RandomForestRegressor(
-        n_estimators=100,
+        n_estimators=20, ## bewusst reduziert für kürzere Laufzeit in der Streamlit-App
         random_state=42,
         n_jobs=-1)
     
