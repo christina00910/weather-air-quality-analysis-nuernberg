@@ -90,15 +90,15 @@ Aktuelle Wetterdaten für die Live-Prognose
 
 ### Korrelationsanalyse
 
-Analyse der Zusammenhänge zwischen Wettervariablen und Luftschadstoffen.
+Analyse der Zusammenhänge zwischen Wettervariablen und Luftschadstoffen
 
 ### Multiple lineare Regression
 
-Statistische Untersuchung signifikanter Einflussfaktoren.
+Statistische Untersuchung signifikanter Einflussfaktoren
 
 ### Random Forest
 
-Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung.
+Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung
 
 ### Vorhersagemodelle
 
