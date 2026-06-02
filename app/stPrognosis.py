@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from pathlib import Path
 import seaborn as sns
 import streamlit as st
 from sklearn.ensemble import RandomForestRegressor
@@ -276,6 +277,28 @@ def assessProperties(modelle):
         submit_button = st.form_submit_button(
             label="Luftqualität berechnen"
         )
+        
+        # ------------------------------------------------------------
+        # Info zur LQI-Klasseneinteilung
+        # ------------------------------------------------------------
+
+        with st.expander("ℹ️ Einordnung der Luftqualitätsindex-Klassen anzeigen"):
+            st.markdown("""
+            Die vorhergesagte Luftschadstoffkonzentration wird anhand der LQI-Klassen eingeordnet.
+            Die Klassen zeigen, ob die Luftqualität als sehr gut, gut, mäßig, schlecht oder sehr schlecht bewertet wird.
+            """)
+
+            base_dir = Path(__file__).parent
+            lqi_bild_pfad = base_dir / "Bilder" / "LQI_Klassenübersicht.png"
+
+            st.image(
+                str(lqi_bild_pfad),
+                use_container_width=True
+            )
+
+            st.caption(
+                "Quelle: Umweltbundesamt (UBA)"
+            )
 
     # 3. VORHERSAGE AUSFÜHREN (Erst nach Button-Klick)
     if submit_button:

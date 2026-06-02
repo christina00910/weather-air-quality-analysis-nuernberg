@@ -2,6 +2,7 @@
 import requests
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error
@@ -171,8 +172,31 @@ def calcWithOpenMeteo (dfO, stoff) :
     st.markdown(
         f"## **{vorhersage_live[0]:.2f} µg/m³**"
     )
-    st.divider()
     
+    # ------------------------------------------------------------
+    # Info zur LQI-Klasseneinteilung
+    # ------------------------------------------------------------
+
+    with st.expander("ℹ️ Einordnung der Luftqualitätsindex-Klassen anzeigen"):
+        st.markdown("""
+        Die vorhergesagte Luftschadstoffkonzentration wird anhand der LQI-Klassen eingeordnet.
+        Die Klassen zeigen, ob die Luftqualität als sehr gut, gut, mäßig, schlecht oder sehr schlecht bewertet wird.
+        """)
+
+        base_dir = Path(__file__).parent
+        lqi_bild_pfad = base_dir / "Bilder" / "LQI_Klassenübersicht.png"
+
+        st.image(
+            str(lqi_bild_pfad),
+            use_container_width=True
+        )
+
+        st.caption(
+            "Quelle: Umweltbundesamt (UBA)"
+        )
+
+    st.divider()
+
     # ------------------------------------------------------------
     # 5. Live-Wetterdaten grafisch darstellen
     # ------------------------------------------------------------
