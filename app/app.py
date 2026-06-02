@@ -1700,7 +1700,7 @@ with tab9:
     Steigt vor allem bei hohen Temperaturen und intensiver Sonneneinstrahlung an.  
     Die Analyse zeigt, dass Ozon stark durch meteorologische Bedingungen beeinflusst wird. Aufgrund steigender Temperaturen und zunehmender Hitzeperioden könnten Ozonbelastungen künftig weiter an Bedeutung gewinnen. 
     
-    Zusätzlich kann der Rückgang von Stickstoffdioxid dazu beitragen, dass Ozon in Bodennähe langsamer abgebaut wird, da Stickstoffoxide unter bestimmten Bedingungen am Abbau von Ozon beteiligt sind. Dieser Zusammenhang wird teilweise auch als „Ozonparadoxon“ beschrieben.
+    Zusätzlich besteht eine enge Wechselwirkung zwischen Ozon und Stickstoffdioxid. Obwohl sinkende NO₂-Werte grundsätzlich positiv sind, können sie unter bestimmten Bedingungen dazu führen, dass Ozon langsamer abgebaut wird und dadurch höhere Ozonkonzentrationen entstehen.
 
     ### 🚗 Stickstoffdioxid (NO₂)
     Zeigt langfristig eher sinkende Werte.  
@@ -1741,15 +1741,15 @@ with tab9:
     with st.expander("💡 Mögliche Erweiterungen für zukünftige Analysen"):
 
         st.markdown("""
-        - Einbindung zusätzlicher Verkehrsdaten, z. B. Verkehrsaufkommen, Staubereiche oder Echtzeit-Verkehrsflüsse  
-        - Berücksichtigung weiterer Emissionsquellen wie Industrie, Heizungen oder Baustellen  
-        - Integration vorheriger Schadstoffmesswerte der letzten Stunden oder Tage zur besseren Erkennung kurzfristiger Belastungsmuster  
-        - Erweiterung der Analyse auf weitere Städte, Regionen oder internationale Datensätze  
-        - Vergleich verschiedener Messstationen innerhalb Nürnbergs oder Bayerns  
-        - Einbindung detaillierter Wetterlagen wie Inversion, Luftaustausch oder Windströmungen  
-        - Einsatz weiterer Machine-Learning-Modelle wie Gradient Boosting oder neuronale Netze  
-        - Entwicklung eines Live-Warnsystems für erhöhte Luftschadstoffbelastungen und gesundheitliche Risiken  
-        - Kombination von Luftqualitäts- und Gesundheitsdaten zur Analyse möglicher gesundheitlicher Auswirkungen  
+        - Einbindung zusätzlicher Verkehrsdaten zur Verbesserung der Vorhersage von Stickstoffdioxid (NO₂)
+        - Berücksichtigung weiterer Emissionsquellen wie Industrieanlagen, Heizsysteme oder Baustellen
+        - Integration historischer Schadstoffmesswerte zur Verbesserung kurzfristiger Vorhersagen
+        - Erweiterung der Analyse auf weitere Städte und Regionen zur Untersuchung regionaler Unterschiede
+        - Vergleich unterschiedlicher Messstationen innerhalb Nürnbergs oder Bayerns
+        - Berücksichtigung detaillierter meteorologischer Einflussfaktoren wie Inversionslagen, Luftaustausch oder Windströmungen
+        - Einsatz weiterer Machine-Learning-Verfahren wie Gradient Boosting oder neuronaler Netze
+        - Entwicklung eines automatisierten Warnsystems für erhöhte Luftschadstoffbelastungen
+        - Verknüpfung von Luftqualitäts- und Gesundheitsdaten zur Untersuchung möglicher gesundheitlicher Auswirkungen
         """)
 
     st.markdown("<br>", unsafe_allow_html=True)
