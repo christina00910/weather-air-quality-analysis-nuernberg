@@ -146,6 +146,7 @@ Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung
 
 Data Science Institute  
 Abschlussprojekt Mai 2026
+Projektzeitraum: 11.05.-29.05.2026
 
 ---
 
