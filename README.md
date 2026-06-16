@@ -145,8 +145,7 @@ Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung
 - Markus Edelhoff
 
 Data Science Institute  
-Abschlussprojekt Mai 2026
-Projektzeitraum: 11.05.-29.05.2026
+Abschlussprojekt 11.05.-29.05.2026
 
 ---
 
