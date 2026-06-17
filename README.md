@@ -141,7 +141,7 @@ Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung
 
 ## Projektteam
 
-- Christina Dürbeck
+- Christina Dürrbeck
 - Markus Edelhoff
 
 Data Science Institute  
