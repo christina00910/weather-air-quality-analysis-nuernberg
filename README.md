@@ -36,7 +36,7 @@ Zur Analyse werden verschiedene statistische Verfahren sowie Machine-Learning-Mo
 ## Projektstruktur
 
 ```text
-Abschlussprojekt_DSI202512_Final
+weather-air-quality-analysis-nuernberg
 │
 ├── app                  # Streamlit-Anwendung
 │   ├── app.py           # Hauptdatei der App
