@@ -16,7 +16,6 @@ import analysePM as an
 import randomForest as ran
 import openMeteo as op
 import stPrognosis as pr
-import O3
 import korrelation as kor
 import silvester as sil
 
