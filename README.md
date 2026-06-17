@@ -36,7 +36,7 @@ Zur Analyse werden verschiedene statistische Verfahren sowie Machine-Learning-Mo
 ## Projektstruktur
 
 ```text
-Abschlussprojekt_DSI202512_Final
+weather-air-quality-analysis-nuernberg
 │
 ├── app                  # Streamlit-Anwendung
 │   ├── app.py           # Hauptdatei der App
@@ -145,7 +145,7 @@ Bestimmung wichtiger Einflussgrößen und Vorhersagemodellierung
 - Markus Edelhoff
 
 Data Science Institute  
-Abschlussprojekt Mai 2026
+Abschlussprojekt 11.05.-29.05.2026
 
 ---
 
